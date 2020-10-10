@@ -63,7 +63,7 @@
     semver "^5.4.1"
     source-map "^0.5.0"
 
-"@babel/core@^7.1.0", "@babel/core@^7.4.5":
+"@babel/core@^7.1.0", "@babel/core@^7.11.6", "@babel/core@^7.4.5":
   version "7.11.6"
   resolved "https://registry.yarnpkg.com/@babel/core/-/core-7.11.6.tgz#3a9455dc7387ff1bac45770650bc13ba04a15651"
   integrity sha512-Wpcv03AGnmkgm6uS6k8iwhIwTrcP0m17TL1n1sy7qD0qelDu4XNeW0dN0mHfa+Gei211yDaLoEe/VlbXQzM4Bg==
@@ -5700,6 +5700,16 @@ gulp-append-prepend@1.0.8:
     read-file "^0.2.0"
     through2 "^2.0.1"
 
+gulp-babel@^8.0.0:
+  version "8.0.0"
+  resolved "https://registry.yarnpkg.com/gulp-babel/-/gulp-babel-8.0.0.tgz#e0da96f4f2ec4a88dd3a3030f476e38ab2126d87"
+  integrity sha512-oomaIqDXxFkg7lbpBou/gnUkX51/Y/M2ZfSjL2hdqXTAlSWZcgZtd2o0cOH0r/eE8LWD0+Q/PsLsr2DKOoqToQ==
+  dependencies:
+    plugin-error "^1.0.1"
+    replace-ext "^1.0.0"
+    through2 "^2.0.0"
+    vinyl-sourcemaps-apply "^0.2.0"
+
 gulp-cli@^2.2.0:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/gulp-cli/-/gulp-cli-2.3.0.tgz#ec0d380e29e52aa45e47977f0d32e18fd161122f"
@@ -11191,7 +11201,7 @@ source-map@^0.4.2:
   dependencies:
     amdefine ">=0.0.4"
 
-source-map@^0.5.0, source-map@^0.5.6:
+source-map@^0.5.0, source-map@^0.5.1, source-map@^0.5.6:
   version "0.5.7"
   resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.5.7.tgz#8a039d2d1021d22d1ea14c80d8ea468ba2ef3fcc"
   integrity sha1-igOdLRAh0i0eoUyA2OpGi6LvP8w=
@@ -12249,6 +12259,13 @@ vinyl-sourcemap@^1.1.0:
     now-and-later "^2.0.0"
     remove-bom-buffer "^3.0.0"
     vinyl "^2.0.0"
+
+vinyl-sourcemaps-apply@^0.2.0:
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/vinyl-sourcemaps-apply/-/vinyl-sourcemaps-apply-0.2.1.tgz#ab6549d61d172c2b1b87be5c508d239c8ef87705"
+  integrity sha1-q2VJ1h0XLCsbh75cUI0jnI74dwU=
+  dependencies:
+    source-map "^0.5.1"
 
 vinyl@^2.0.0:
   version "2.2.1"

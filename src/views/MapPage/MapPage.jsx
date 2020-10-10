@@ -7,7 +7,6 @@ import GoogleMapReact from "google-map-react";
 
 import styles from "assets/jss/custom/views/mapPage.js";
 
-import CustomButton from "components/CustomButtons/Button.js";
 import CustomInput from "components/CustomInput/CustomInput.js";
 import Footer from "components/Footer/Footer";
 
@@ -30,7 +29,7 @@ export default function MapPage(props) {
           }}
           defaultZoom={5}
           style={{ width: "100%", height: "100%" }}
-          options={(maps) => {
+          options={() => {
             return { mapTypeId: "hybrid" };
           }}
         />

@@ -1,7 +1,10 @@
 const gulp = require("gulp");
 const gap = require("gulp-append-prepend");
+const gb = require("gulp-babel");
 
-gulp.task("licenses", async function() {
+gulp.task("licenses", async () => {
+  gulp.src(["./script/*.js"]).pipe(gb()).pipe(gulp.dest("./js"));
+
   // this is to add Creative Tim licenses in the production mode for the minified js
   gulp
     .src("build/static/js/*chunk.js", { base: "./" })
