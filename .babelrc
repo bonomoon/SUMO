@@ -5,16 +5,16 @@
   ],
   "plugins": [
     ["@babel/plugin-proposal-class-properties"],
-    [
-      "module-resolver", {
-        "root": ["./src"],
-        "alias": {
-          "*": "./src",
-          "components/*": "./src/components",
-          "views/*": "./src/views",
-          "assets/*": "./src/assets"
-        }
-      }
-    ]
+    // [
+    //   "module-resolver", {
+    //     "root": ["./src"],
+    //     "alias": {
+    //       "*": "./src",
+    //       "components/*": "./src/components",
+    //       "views/*": "./src/views",
+    //       "assets/*": "./src/assets"
+    //     }
+    //   }
+    // ]
   ]
 }

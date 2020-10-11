@@ -11,6 +11,7 @@ const mapPageStyle = {
     ...container,
     zIndex: "2",
     display: "block",
+    backgroundColor: "#00000000",
     position: "absolute",
     top: 0,
     left: 0,
