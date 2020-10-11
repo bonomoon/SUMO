@@ -11,12 +11,14 @@ import classNames from "classnames";
 
 const styles = (theme) => ({
   root: {
+    borderRadius: "10px",
     height: theme.spacing(6),
     display: "flex",
     justifyContent: "space-between",
   },
   iconButton: {
-    color: theme.palette.action.active,
+    // color: theme.palette.action.active,
+    color: "#2979FF",
     transform: "scale(1, 1)",
     transition: theme.transitions.create(["transform", "color"], {
       duration: theme.transitions.duration.shorter,
