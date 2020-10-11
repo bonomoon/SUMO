@@ -1,5 +1,7 @@
 import React, { useState, useReducer } from "react";
+import moment from "moment";
 import PropTypes from 'prop-types';
+
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 import CircularProgress from "@material-ui/core/CircularProgress";
@@ -7,15 +9,21 @@ import Divider from "@material-ui/core/Divider";
 import Icon from "@material-ui/core/Icon";
 // core components
 import GoogleMapReact from "google-map-react";
+import Calendar from "react-calendar";
+import "react-calendar/dist/Calendar.css";
 import ListSubheader from '@material-ui/core/ListSubheader';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
+
 import styles from "assets/jss/custom/views/mapPage.js";
 
 import Button from "components/CustomButtons/Button";
 import SearchBar from "components/Input/SearchBar";
 import Footer from "components/Footer/Footer";
 import { FixedSizeList } from 'react-window';
+
+import data from "assets/res/data";
+import { IconButton } from "@material-ui/core";
 
 const useStyles = makeStyles(styles);
 
@@ -84,11 +92,23 @@ export default function MapPage(props) {
   const search = useSearch();
   const classes = useStyles();
 
+  const [startDate, setStartDate] = useState("");
+  const [endDate, setEndDate] = useState("");
+  const [visibleStartDate, setVisibleStartDate] = useState(false);
+  const [visibleEndDate, setVisibleEndDate] = useState(false);
+  const [factoryMarkers, setFactoryMarkers] = useState([]);
+  const [landfillMarkers, setLandfillMarkers] = useState([]);
+
   return (
     <div>
       <div
         className={classes.left}
-        style={{ backgroundColor: search.searched ? "#F3F4F7" : "#00000000" }}
+        style={{
+          backgroundColor: search.searched ? "#F3F4F7" : "#00000000",
+          boxShadow: search.searched
+            ? "0px 0px 8px rgba(0, 0, 0, 0.24), 0px 0px 32px rgba(0, 0, 0, 0.12)"
+            : "0px 0px 8px rgba(0, 0, 0, 0), 0px 0px 32px rgba(0, 0, 0, 0)",
+        }}
       >
         <div
           style={{
@@ -122,26 +142,70 @@ export default function MapPage(props) {
                       margin: "10px 0",
                     }}
                   >
-                    <Button style={localStyles().dataButton}>
-                      {"Start date   "}
+                    <Button
+                      style={localStyles().dataButton}
+                      onClick={() => setVisibleStartDate(!visibleStartDate)}
+                    >
+                      {startDate !== ""
+                        ? moment(startDate).format("MMM Do YYYY")
+                        : "Start date   "}
                       <Icon style={{ color: "#2979FF", marginLeft: "10px" }}>
                         calendar_today
                       </Icon>
                     </Button>
-                    <Button style={localStyles().dataButton}>
-                      {"End date   "}
+                    <Button
+                      style={localStyles().dataButton}
+                      onClick={() => setVisibleEndDate(!visibleEndDate)}
+                    >
+                      {endDate !== ""
+                        ? moment(endDate).format("MMM Do YYYY")
+                        : "End date   "}
                       <Icon style={{ color: "#2979FF", marginLeft: "10px" }}>
                         calendar_today
                       </Icon>
                     </Button>
                   </div>
+                  {(visibleStartDate || visibleEndDate) && (
+                    <div
+                      style={{
+                        display: "flex",
+                        marginBottom: "10px",
+                      }}
+                    >
+                      <Calendar
+                        locale={"en-US"}
+                        value={
+                          visibleStartDate
+                            ? startDate || new Date()
+                            : endDate || new Date()
+                        }
+                        onChange={(v) => {
+                          if (visibleStartDate) {
+                            setStartDate(v);
+                            setVisibleStartDate(false);
+                          } else {
+                            setEndDate(v);
+                            setVisibleEndDate(false);
+                          }
+                        }}
+                      />
+                    </div>
+                  )}
                   <div
                     style={{
                       display: "flex",
                       justifyContent: "flex-end",
                     }}
                   >
-                    <Button style={localStyles().submitButton}>Submit</Button>
+                    <Button
+                      style={localStyles().submitButton}
+                      onClick={() => {
+                        setFactoryMarkers(data.factory);
+                        setLandfillMarkers(data.landfill);
+                      }}
+                    >
+                      Search
+                    </Button>
                   </div>
                 </div>
                 <Divider style={{ margin: "10px 0" }} />
@@ -171,6 +235,7 @@ export default function MapPage(props) {
           )}
         </div>
       </div>
+
       <div className={classes.container}>
         <GoogleMapReact
           bootstrapURLKeys={{
@@ -186,7 +251,35 @@ export default function MapPage(props) {
           options={() => {
             return { mapTypeId: "hybrid" };
           }}
-        />
+        >
+          {factoryMarkers.map((e, i) => {
+            return (
+              <div
+                key={i}
+                lat={e.lat}
+                lng={e.lng}
+                style={{
+                  position: 'absolute',
+                  top: "50%",
+                  left: "50%",
+                  width: "18px",
+                  height: "18px",
+                  backgroundColor: "#000",
+                  border: "2px solid #fff",
+                  borderRadius: "100%",
+                  userSelect: "none",
+                  transform: `translate(-50%, -50%)`,
+                  zIndex: 1,
+                  cursor: "pointer",
+                }}
+              >
+                <Button justIcon>
+                  <i className={" fab fa-google"} />
+                </Button>
+              </div>
+            );
+          })}
+        </GoogleMapReact>
       </div>
       <Footer whiteFont />
     </div>
