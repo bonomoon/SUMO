@@ -311,6 +311,33 @@ export default function MapPage(props) {
               </div>
             );
           })}
+          {landfillMarkers.map((e, i) => {
+            return (
+              <div
+                key={i}
+                lat={e.lat}
+                lng={e.lng}
+                style={{
+                  position: "absolute",
+                  top: "50%",
+                  left: "50%",
+                  width: "18px",
+                  height: "18px",
+                  backgroundColor: "#000",
+                  border: "2px solid #fff",
+                  borderRadius: "100%",
+                  userSelect: "none",
+                  transform: `translate(-50%, -50%)`,
+                  zIndex: 1,
+                  cursor: "pointer",
+                }}
+              >
+                <Button justIcon>
+                  <i className={" fab fa-facebook"} />
+                </Button>
+              </div>
+            );
+          })}
         </GoogleMapReact>
       </div>
       <Footer whiteFont />
