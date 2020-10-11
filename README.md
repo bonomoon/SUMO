@@ -90,9 +90,9 @@ $ yarn build
     * [Hyojin Jeon](https://preview.webflow.com/preview/hyojins-initial-project?utm_medium=preview_link&utm_source=designer&utm_content=hyojins-initial-project&preview=9764b356c66558cdfa617a5566d5c3fd&mode=preview)
     
 * Developers
-    * [Bong-oh Moon(Front-end)](https://github.com/bonomoon)
-    * [Yongju Seong(Back-end)](https://github.com/Yongjuseong)
-    * Yonatan(Back-end)
+    * [Bong-oh Moon](https://github.com/bonomoon)(Front-end)
+    * [Yongju Seong](https://github.com/Yongjuseong)(Back-end)
+    * [Achamyeleh, Yonatan Gizachew](https://github.com/Emegua)(Back-end)
     
 ## License
 
