@@ -147,6 +147,7 @@ export default function MapPage(props) {
                       }}
                     >
                       <Calendar
+                        locale={"en-US"}
                         value={
                           visibleStartDate
                             ? startDate || new Date()
