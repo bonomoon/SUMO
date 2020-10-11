@@ -7,7 +7,7 @@ import GoogleMapReact from "google-map-react";
 
 import styles from "assets/jss/custom/views/mapPage.js";
 
-import CustomInput from "components/CustomInput/CustomInput.js";
+import SearchBar from "material-ui-search-bar";
 import Footer from "components/Footer/Footer";
 
 const useStyles = makeStyles(styles);
@@ -35,11 +35,10 @@ export default function MapPage(props) {
         />
         <div>
           <div>
-            <CustomInput />
+            <SearchBar style={{ zindex: "10" }} />
           </div>
         </div>
       </div>
-      {/* <Footer whiteFont /> */}
       <Footer whiteFont />
     </div>
   );
