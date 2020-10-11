@@ -2,14 +2,14 @@
 
 
 <a href="http://ec2-3-35-22-38.ap-northeast-2.compute.amazonaws.com:3000/">
-    <img src="./img/app_logo.jpeg" alt="Aimeos logo" title="Aimeos" align="right" width="150" />
+    <img src="./img/app_logo.jpeg" alt="Aimeos logo" title="Aimeos" align="right" width="250" />
 </a>
 
 
 SUMO
 ======================
 
-:earth_asia:  SI Analysis Track Idea Repo in JuntionXSeoul 2020
+:earth_asia:  SI Analysis Track Idea Repo in [JuntionXSeoul 2020](https://app.hackjunction.com/)
 
 🥇 1st track winner!!
 
@@ -30,12 +30,13 @@ SUMO
     - [Challenge](#challenge)
 - [SUMO Setup](#sumo-setup)
     - [Getting Started](#getting-started)
+- [About Our Team](#about-our-team)
 - [License](#license)
 - [Links](#links)
 
 ## What is SUMO?
 > SUstainability MOnitoring (SUMO).
-
+ 
 ### Problem
 
 Nowadays sustainability is of the utmost importance; climate change is quickly altering our world and the pressure grows on companies to be sustainable. For this they develop goals, however it is hard to monitor if those goals are actually achieved.
@@ -75,6 +76,24 @@ $ yarn build
 
 ```
 
+## About our Team
+
+<img src="./img/team_logo.png" alt="ololo logo" title="ololo" width="300" />
+
+> Our team name is ololo.
+
+* Product Manager
+    * [Dim Hoogeveen](https://dimhoogeveen.com/)
+    
+* Designers
+    * [Iskhak Asanov](https://www.linkedin.com/in/iskhak-a-080466136/)
+    * [Hyojin Jeon](https://preview.webflow.com/preview/hyojins-initial-project?utm_medium=preview_link&utm_source=designer&utm_content=hyojins-initial-project&preview=9764b356c66558cdfa617a5566d5c3fd&mode=preview)
+    
+* Developers
+    * [Bong-oh Moon(Front-end)](https://github.com/bonomoon)
+    * [Yongju Seong(Back-end)](https://github.com/Yongjuseong)
+    * Yonatan(Back-end)
+    
 ## License
 
 <img src="./img/team_logo.png" alt="ololo logo" title="ololo" width="300" />
