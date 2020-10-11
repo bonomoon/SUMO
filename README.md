@@ -45,7 +45,7 @@ We introduce SUMO as a solution; SUMO makes it able to search for factories and 
 
 ### Implementation
 
-All of this is provided in an easy-to-use website with excellent UI and UX. We are using React.js in the front-end and Django + MySQL on the back-end. Furthermore the initial design has been made in Figma. This made sure that we followed an user-first approach.
+All of this is provided in an easy-to-use website with excellent UI and UX. We are using [React.js](https://ko.reactjs.org/) in the front-end and [Django](https://www.djangoproject.com/) + MySQL on the back-end. Furthermore the initial design has been made in [Figma](https://www.figma.com/). This made sure that we followed an user-first approach.
 
 ### Challenge
 
