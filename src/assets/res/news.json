@@ -1,0 +1,24 @@
+{
+    "landfills": [{
+        "name": "Indirapuram landfill",
+        "link": "https://www.hindustantimes.com/noida/agency-hired-to-remove-150-000-tonnes-of-legacy-waste-dumped-at-indirapuram-landfill/story-GSxprdjxOmBucvZEugVEtL.html"
+    }, {
+        "name": "lnadfill in our backyard",
+        "link": "https://edition.cnn.com/interactive/2020/09/us/september-11-cancer-rates-fresh-kills/"
+    }, {
+        "name": "recycling plastic",
+        "link": "https://www.npr.org/2020/09/11/897692090/how-big-oil-misled-the-public-into-believing-plastic-would-be-recycled"
+    },
+    {
+        "name": "Reusuable Packaging",
+        "link": "https://www.environmentalleader.com/2020/09/reusable-packaging-for-perishables-diverts-a-million-tonnes-from-landfill-company-says/"
+    }
+    {
+        "name": "수도권 쓰레기",
+        "link": "http://tbs.seoul.kr/news/newsView.do?typ_800=6&idx_800=3405100&seq_800=20397677"
+    },
+    {
+        "name": "삼성전자- 반도체 폐기물",
+        "link": "https://www.ytn.co.kr/_ln/0102_202006111642282458"
+    }]
+} 

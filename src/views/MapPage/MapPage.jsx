@@ -92,6 +92,7 @@ export default function MapPage(props) {
   const search = useSearch();
   const classes = useStyles();
 
+  
   const [startDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState("");
   const [visibleStartDate, setVisibleStartDate] = useState(false);
@@ -278,7 +279,7 @@ export default function MapPage(props) {
             lat: 36.395319,
             lng: 127.403476,
           }}
-          defaultZoom={5}
+          defaultZoom={3}
           style={{ width: "100%", height: "100%" }}
           options={() => {
             return { mapTypeId: "hybrid" };
