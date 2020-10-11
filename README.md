@@ -16,9 +16,13 @@ SUMO
 [SUMO][sumo-demo] is SUstainability MOnitoring. SUMO makes it able to search for factories and check where their waste is actually going by using satellite images. It analyses the landfill locations and checks if they are actually increasing more than they should. This tool is free to use for transparency and more in-depth analysis is a paid feature for companies to further investigate their manufacturers and suppliers.
 
 
-[![SUMO demo](./img/app_image.png)][sumo-demo]
+[![SUMO demo](./img/app_image.png)](https://app.hackjunction.com/projects/junctionx-seoul/challenge/%242b%2405%24VpRaIJRucWnj0.5m1gKSI.7aBeI7jsIGG1rtWbSkNaTikVe.zfcrK/view/5f829dc4404abb004877ff37)
 
-[Web demo][sumo-demo]
+[Presentation Video Link](https://drive.google.com/file/d/1EsYEhJjpHUl9OcyRlOcsemfFxan95qos/view)
+
+[Demo Video Link](https://drive.google.com/file/d/1EsYEhJjpHUl9OcyRlOcsemfFxan95qos/view)
+
+[Web Demo Link][sumo-demo]
 
 
 ## Table of content
@@ -102,6 +106,7 @@ $ yarn build
 
 ## Links
 
+* [JuntionXSeoul2020 Track2 SUMO Summary](https://app.hackjunction.com/projects/junctionx-seoul/challenge/%242b%2405%24VpRaIJRucWnj0.5m1gKSI.7aBeI7jsIGG1rtWbSkNaTikVe.zfcrK/view/5f829dc4404abb004877ff37)
 * [Web site][sumo-demo]
 * [Issue tracker](https://github.com/bonomoon/SUMO/issues)
 * [Source code](https://github.com/bonomon)
