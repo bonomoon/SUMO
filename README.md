@@ -10,7 +10,8 @@ SUMO
 ======================
 
 :earth_asia:  SI Analysis Track Idea Repo in JuntionXSeoul 2020
-:🥇: 1st track winner!!
+
+🥇 1st track winner!!
 
 [SUMO][sumo-demo] is SUstainability MOnitoring. SUMO makes it able to search for factories and check where their waste is actually going by using satellite images. It analyses the landfill locations and checks if they are actually increasing more than they should. This tool is free to use for transparency and more in-depth analysis is a paid feature for companies to further investigate their manufacturers and suppliers.
 
