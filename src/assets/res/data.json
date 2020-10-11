@@ -1,0 +1,68 @@
+{
+  "company": [
+    {
+      "id": 1,
+      "name": "Samsung",
+      "location": "Seoul",
+      "number": "82-02-342-1234"
+    },
+
+    {
+      "id": 2,
+      "name": "LG",
+      "location": "Seoul",
+      "number": "82-02-532-5322"
+    }
+  ],
+
+  "factory": [
+    {
+      "id": 1,
+      "company": "Samsung",
+      "name": "Samsung_RAM_Facotry",
+      "lat": "15",
+      "lng": "45",
+      "number": "324-342-1345",
+      "keyword1": "Semiconductor",
+      "keyword2": "RAM",
+      "description": "Samsung's RAM(memory) facotry"
+    },
+
+    {
+      "id": 2,
+      "company": "Samsung",
+      "name": "Samsung_Appliance_Facotry",
+      "lat": "45",
+      "lng": "64",
+      "number": "423-532-3412",
+      "keyword1": "Semiconductor",
+      "keyword2": "Home appliance",
+      "description": "Samsung's home appliance factory"
+    }
+  ],
+  "landfill": [
+    {
+      "id": 1,
+      "factory": "Samsung_RAM_Facotry",
+      "name": "A1_National_landfill",
+      "number": "324-352-1623",
+      "lat": "15",
+      "lng": "30",
+      "keyword1": "Conductor & Semiconductor",
+      "keyword2": "valley",
+      "description": "A1_National_landfill for conductor and semiconductor"
+    },
+
+    {
+      "id": 2,
+      "factory": "Samsung_Appliance_Facotry",
+      "name": "F1_National_landfill",
+      "lat": "45",
+      "lng": "52",
+      "number": "423-523-1432",
+      "keyword1": "Home appliance",
+      "keyword2": "Mountain",
+      "description": "F1_National_landfill for Home appliances"
+    }
+  ]
+}

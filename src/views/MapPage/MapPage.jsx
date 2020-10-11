@@ -1,6 +1,6 @@
 import React, { useState, useReducer } from "react";
 import moment from "moment";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
@@ -11,19 +11,18 @@ import Icon from "@material-ui/core/Icon";
 import GoogleMapReact from "google-map-react";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
-import ListSubheader from '@material-ui/core/ListSubheader';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemText from '@material-ui/core/ListItemText';
+import ListSubheader from "@material-ui/core/ListSubheader";
+import ListItem from "@material-ui/core/ListItem";
+import ListItemText from "@material-ui/core/ListItemText";
 
 import styles from "assets/jss/custom/views/mapPage.js";
 
 import Button from "components/CustomButtons/Button";
 import SearchBar from "components/Input/SearchBar";
 import Footer from "components/Footer/Footer";
-import { FixedSizeList } from 'react-window';
+import { FixedSizeList } from "react-window";
 
 import data from "assets/res/data";
-import { IconButton } from "@material-ui/core";
 
 const useStyles = makeStyles(styles);
 
