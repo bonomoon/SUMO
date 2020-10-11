@@ -1,4 +1,5 @@
 import React, { useState, useReducer } from "react";
+import PropTypes from 'prop-types';
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 import CircularProgress from "@material-ui/core/CircularProgress";
@@ -6,12 +7,15 @@ import Divider from "@material-ui/core/Divider";
 import Icon from "@material-ui/core/Icon";
 // core components
 import GoogleMapReact from "google-map-react";
-
+import ListSubheader from '@material-ui/core/ListSubheader';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemText from '@material-ui/core/ListItemText';
 import styles from "assets/jss/custom/views/mapPage.js";
 
 import Button from "components/CustomButtons/Button";
 import SearchBar from "components/Input/SearchBar";
 import Footer from "components/Footer/Footer";
+import { FixedSizeList } from 'react-window';
 
 const useStyles = makeStyles(styles);
 
@@ -37,6 +41,21 @@ const searchReducer = (state, action) => {
     default:
       return state;
   }
+};
+
+function renderRow(props) {
+  const { index, style } = props;
+
+  return (
+    <ListItem button style={style} key={index}>
+      <ListItemText primary={`${index + 1}. Item`} />
+    </ListItem>
+  );
+}
+
+renderRow.propTypes = {
+  index: PropTypes.number.isRequired,
+  style: PropTypes.object.isRequired
 };
 
 const searchInitialState = {
@@ -126,6 +145,27 @@ export default function MapPage(props) {
                   </div>
                 </div>
                 <Divider style={{ margin: "10px 0" }} />
+                <div>
+                  <ListSubheader style={{ color: "#DC493A" }}>
+                    <Icon style={{ color: "#DC493A", marginBottom:"-5px", marginRight:"5px" }}>
+                      engineering</Icon>
+                      Factories
+                  </ListSubheader>
+                  <FixedSizeList style={{backgroundColor:"#fff", borderRadius:"12px" }} height={200} width={300} itemSize={40} itemCount={20}>
+                    {renderRow}
+                  </FixedSizeList>
+                </div>
+                <Divider style={{ margin: "10px 0" }} />
+                <div>
+                  <ListSubheader style={{ color: "#DC493A" }}>
+                    <Icon style={{ color: "#DC493A", marginBottom:"-5px", marginRight:"5px" }}>
+                      terrain</Icon>
+                      Landfills
+                  </ListSubheader>
+                  <FixedSizeList style={{backgroundColor:"#fff", borderRadius:"12px" }} height={200} width={300} itemSize={40} itemCount={20}>
+                    {renderRow}
+                  </FixedSizeList>
+                </div>
               </div>
             )
           )}
