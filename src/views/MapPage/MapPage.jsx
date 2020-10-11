@@ -2,6 +2,7 @@ import React, { useState, useReducer } from "react";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 import CircularProgress from "@material-ui/core/CircularProgress";
+import Divider from "@material-ui/core/Divider";
 import Icon from "@material-ui/core/Icon";
 // core components
 import GoogleMapReact from "google-map-react";
@@ -93,35 +94,38 @@ export default function MapPage(props) {
             </div>
           ) : (
             search.searched && (
-              <div style={{ display: "flex", flexDirection: "column" }}>
-                <div
-                  style={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    margin: "10px 0",
-                  }}
-                >
-                  <Button style={localStyles().dataButton}>
-                    {"Start date   "}
-                    <Icon style={{ color: "#2979FF", marginLeft: "10px" }}>
-                      calendar_today
-                    </Icon>
-                  </Button>
-                  <Button style={localStyles().dataButton}>
-                    {"End date   "}
-                    <Icon style={{ color: "#2979FF", marginLeft: "10px" }}>
-                      calendar_today
-                    </Icon>
-                  </Button>
+              <div>
+                <div style={{ display: "flex", flexDirection: "column" }}>
+                  <div
+                    style={{
+                      display: "flex",
+                      justifyContent: "space-between",
+                      margin: "10px 0",
+                    }}
+                  >
+                    <Button style={localStyles().dataButton}>
+                      {"Start date   "}
+                      <Icon style={{ color: "#2979FF", marginLeft: "10px" }}>
+                        calendar_today
+                      </Icon>
+                    </Button>
+                    <Button style={localStyles().dataButton}>
+                      {"End date   "}
+                      <Icon style={{ color: "#2979FF", marginLeft: "10px" }}>
+                        calendar_today
+                      </Icon>
+                    </Button>
+                  </div>
+                  <div
+                    style={{
+                      display: "flex",
+                      justifyContent: "flex-end",
+                    }}
+                  >
+                    <Button style={localStyles().submitButton}>Submit</Button>
+                  </div>
                 </div>
-                <div
-                  style={{
-                    display: "flex",
-                    justifyContent: "flex-end",
-                  }}
-                >
-                  <Button style={localStyles().submitButton}>Submit</Button>
-                </div>
+                <Divider style={{ margin: "10px 0" }} />
               </div>
             )
           )}
