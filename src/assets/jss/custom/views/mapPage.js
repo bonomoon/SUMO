@@ -18,6 +18,8 @@ const mapPageStyle = {
     width: 350,
     height: "100vh",
     padding: "10px",
+    boxShadow:
+      "0px 0px 8px rgba(0, 0, 0, 0), 0px 0px 32px rgba(0, 0, 0, 0.12)",
   },
   cardHidden: {
     opacity: "0",

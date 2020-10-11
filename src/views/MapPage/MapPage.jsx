@@ -1,4 +1,5 @@
 import React, { useState, useReducer } from "react";
+import moment from "moment";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 import CircularProgress from "@material-ui/core/CircularProgress";
@@ -6,6 +7,8 @@ import Divider from "@material-ui/core/Divider";
 import Icon from "@material-ui/core/Icon";
 // core components
 import GoogleMapReact from "google-map-react";
+import Calendar from "react-calendar";
+import "react-calendar/dist/Calendar.css";
 
 import styles from "assets/jss/custom/views/mapPage.js";
 
@@ -65,11 +68,21 @@ export default function MapPage(props) {
   const search = useSearch();
   const classes = useStyles();
 
+  const [startDate, setStartDate] = useState("");
+  const [endDate, setEndDate] = useState("");
+  const [visibleStartDate, setVisibleStartDate] = useState(false);
+  const [visibleEndDate, setVisibleEndDate] = useState(false);
+
   return (
     <div>
       <div
         className={classes.left}
-        style={{ backgroundColor: search.searched ? "#F3F4F7" : "#00000000" }}
+        style={{
+          backgroundColor: search.searched ? "#F3F4F7" : "#00000000",
+          boxShadow: search.searched
+            ? "0px 0px 8px rgba(0, 0, 0, 0.24), 0px 0px 32px rgba(0, 0, 0, 0.12)"
+            : "0px 0px 8px rgba(0, 0, 0, 0), 0px 0px 32px rgba(0, 0, 0, 0)",
+        }}
       >
         <div
           style={{
@@ -103,19 +116,54 @@ export default function MapPage(props) {
                       margin: "10px 0",
                     }}
                   >
-                    <Button style={localStyles().dataButton}>
-                      {"Start date   "}
+                    <Button
+                      style={localStyles().dataButton}
+                      onClick={() => setVisibleStartDate(!visibleStartDate)}
+                    >
+                      {startDate !== ""
+                        ? moment(startDate).format("MMM Do YYYY")
+                        : "Start date   "}
                       <Icon style={{ color: "#2979FF", marginLeft: "10px" }}>
                         calendar_today
                       </Icon>
                     </Button>
-                    <Button style={localStyles().dataButton}>
-                      {"End date   "}
+                    <Button
+                      style={localStyles().dataButton}
+                      onClick={() => setVisibleEndDate(!visibleEndDate)}
+                    >
+                      {endDate !== ""
+                        ? moment(endDate).format("MMM Do YYYY")
+                        : "End date   "}
                       <Icon style={{ color: "#2979FF", marginLeft: "10px" }}>
                         calendar_today
                       </Icon>
                     </Button>
                   </div>
+                  {(visibleStartDate || visibleEndDate) && (
+                    <div
+                      style={{
+                        display: "flex",
+                        marginBottom: "10px",
+                      }}
+                    >
+                      <Calendar
+                        value={
+                          visibleStartDate
+                            ? startDate || new Date()
+                            : endDate || new Date()
+                        }
+                        onChange={(v) => {
+                          if (visibleStartDate) {
+                            setStartDate(v);
+                            setVisibleStartDate(false);
+                          } else {
+                            setEndDate(v);
+                            setVisibleEndDate(false);
+                          }
+                        }}
+                      />
+                    </div>
+                  )}
                   <div
                     style={{
                       display: "flex",
@@ -131,6 +179,7 @@ export default function MapPage(props) {
           )}
         </div>
       </div>
+
       <div className={classes.container}>
         <GoogleMapReact
           bootstrapURLKeys={{
