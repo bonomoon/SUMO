@@ -2,7 +2,7 @@
 
 
 <a href="http://ec2-3-35-22-38.ap-northeast-2.compute.amazonaws.com:3000/">
-    <img src="./img/app_logo.jpeg" alt="Aimeos logo" title="Aimeos" align="right" width="250" />
+    <img src="./img/app_logo.jpeg" alt="SUMO" title="SUMO" align="right" width="250" />
 </a>
 
 
@@ -96,7 +96,9 @@ $ yarn build
     
 ## License
 
-<img src="./img/team_logo.png" alt="ololo logo" title="ololo" width="300" />
+<a href="LICENSE.md">
+    <img src="./img/team_logo.png" alt="ololo logo" title="ololo" width="300" />
+</a>
 
 ## Links
 
