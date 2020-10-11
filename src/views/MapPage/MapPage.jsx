@@ -226,7 +226,7 @@ export default function MapPage(props) {
                     <FixedSizeList
                       style={{ backgroundColor: "#fff", borderRadius: "12px" }}
                       height={200}
-                      width={300}
+                      width={"auto"}
                       itemSize={40}
                       itemCount={factoryMarkers.length}
                       itemData={factoryMarkers}
@@ -251,9 +251,9 @@ export default function MapPage(props) {
                       Landfills
                     </ListSubheader>
                     <FixedSizeList
-                      style={{ backgroundColor: "#fff", borderRadius: "12px" }}
+                      style={{ backgroundColor: "#fff", borderRadius: "12px"}}
                       height={200}
-                      width={300}
+                      width={"auto"}
                       itemSize={40}
                       itemCount={landfillMarkers.length}
                       itemData={landfillMarkers}
