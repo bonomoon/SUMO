@@ -51,18 +51,19 @@ const searchReducer = (state, action) => {
 };
 
 function renderRow(props) {
-  const { index, style } = props;
+  const { index, style, data } = props;
 
   return (
     <ListItem button style={style} key={index}>
-      <ListItemText primary={`${index + 1}. Item`} />
+      <ListItemText primary={`${index + 1}. ${data[index].name}`} />
     </ListItem>
   );
 }
 
 renderRow.propTypes = {
   index: PropTypes.number.isRequired,
-  style: PropTypes.object.isRequired
+  style: PropTypes.object.isRequired,
+  data: PropTypes.any.isRequired,
 };
 
 const searchInitialState = {
@@ -208,27 +209,59 @@ export default function MapPage(props) {
                   </div>
                 </div>
                 <Divider style={{ margin: "10px 0" }} />
-                <div>
-                  <ListSubheader style={{ color: "#DC493A" }}>
-                    <Icon style={{ color: "#DC493A", marginBottom:"-5px", marginRight:"5px" }}>
-                      engineering</Icon>
+                {factoryMarkers.length > 0 && (
+                  <div>
+                    <ListSubheader style={{ color: "#DC493A" }}>
+                      <Icon
+                        style={{
+                          color: "#DC493A",
+                          marginBottom: "-5px",
+                          marginRight: "5px",
+                        }}
+                      >
+                        engineering
+                      </Icon>
                       Factories
-                  </ListSubheader>
-                  <FixedSizeList style={{backgroundColor:"#fff", borderRadius:"12px" }} height={200} width={300} itemSize={40} itemCount={20}>
-                    {renderRow}
-                  </FixedSizeList>
-                </div>
-                <Divider style={{ margin: "10px 0" }} />
-                <div>
-                  <ListSubheader style={{ color: "#DC493A" }}>
-                    <Icon style={{ color: "#DC493A", marginBottom:"-5px", marginRight:"5px" }}>
-                      terrain</Icon>
+                    </ListSubheader>
+                    <FixedSizeList
+                      style={{ backgroundColor: "#fff", borderRadius: "12px" }}
+                      height={200}
+                      width={300}
+                      itemSize={40}
+                      itemCount={factoryMarkers.length}
+                      itemData={factoryMarkers}
+                    >
+                      {renderRow}
+                    </FixedSizeList>
+                    <Divider style={{ marginTop: "20px" }} />
+                  </div>
+                )}
+                {landfillMarkers.length > 0 && (
+                  <div>
+                    <ListSubheader style={{ color: "#DC493A" }}>
+                      <Icon
+                        style={{
+                          color: "#DC493A",
+                          marginBottom: "-5px",
+                          marginRight: "5px",
+                        }}
+                      >
+                        terrain
+                      </Icon>
                       Landfills
-                  </ListSubheader>
-                  <FixedSizeList style={{backgroundColor:"#fff", borderRadius:"12px" }} height={200} width={300} itemSize={40} itemCount={20}>
-                    {renderRow}
-                  </FixedSizeList>
-                </div>
+                    </ListSubheader>
+                    <FixedSizeList
+                      style={{ backgroundColor: "#fff", borderRadius: "12px" }}
+                      height={200}
+                      width={300}
+                      itemSize={40}
+                      itemCount={landfillMarkers.length}
+                      itemData={landfillMarkers}
+                    >
+                      {renderRow}
+                    </FixedSizeList>
+                  </div>
+                )}
               </div>
             )
           )}
@@ -258,7 +291,7 @@ export default function MapPage(props) {
                 lat={e.lat}
                 lng={e.lng}
                 style={{
-                  position: 'absolute',
+                  position: "absolute",
                   top: "50%",
                   left: "50%",
                   width: "18px",
@@ -310,5 +343,5 @@ const localStyles = (theme) => ({
   },
   buttonIcon: {
     marginLeft: "5px",
-  }
+  },
 });
