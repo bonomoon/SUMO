@@ -9,7 +9,7 @@
 SUMO
 ======================
 
-:earth_asia:  SI Analysis Track Idea Repo in [JuntionXSeoul 2020](https://app.hackjunction.com/)
+:earth_asia:  SI Analytics Track Idea Repo in [JuntionXSeoul 2020](https://app.hackjunction.com/)
 
 🥇 1st track winner!!
 
